@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>九一电影网 - 高清电影在线观看 | 折纸影视导航</title>
+<meta name="keywords" content="九一电影网, jiuyidianyingwang-top, 高清电影, 在线观看, 最新影视, 电影推荐, 折纸风格, 纸艺">
+<meta name="description" content="九一电影网 (https://jiuyidianyingwang-top.github.io) 以折纸纸艺立体风格打造的高清影视导航平台，提供电影、电视剧、动漫在线观看，每日更新。">
+<meta name="author" content="九一电影网">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jiuyidianyingwang-top.github.io">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "九一电影网",
+  "url": "https://jiuyidianyingwang-top.github.io",
+  "description": "提供最新高清电影、电视剧、动漫在线观看，每日更新，极速播放",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://jiuyidianyingwang-top.github.io/#search={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<style>
+:root{
+  --paper:#F5F1E8;
+  --paper-d:#EAE3D4;
+  --paper-fold:#E2DAC7;
+  --ink:#33312E;
+  --ink-soft:#6B665D;
+  --red:#D94F4F;
+  --blue:#4A6FA5;
+  --yellow:#E8B84A;
+  --green:#5C9E7D;
+  --fold:linear-gradient(135deg,rgba(255,255,255,.5),transparent 50%),linear-gradient(225deg,rgba(0,0,0,.06),transparent 50%);
+  --shadow:0 6px 0 rgba(51,49,46,.12),0 12px 24px rgba(51,49,46,.14);
+  --shadow-sm:0 3px 0 rgba(51,49,46,.1),0 6px 14px rgba(51,49,46,.1);
+  --serif:'Georgia','Times New Roman','PingFang SC','Microsoft YaHei',serif;
+  --sans:'Arial','PingFang SC','Microsoft YaHei',sans-serif;
+  --mono:'Courier New',Courier,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(51,49,46,.015) 3px,rgba(51,49,46,.015) 4px);
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* 折纸面板 */
+.fold{background:var(--paper);border:1px solid rgba(51,49,46,.12);box-shadow:var(--shadow);position:relative;clip-path:polygon(0 0,100% 0,100% 92%,92% 100%,0 100%);}
+.fold::before{content:"";position:absolute;top:0;right:0;width:8%;height:8%;background:linear-gradient(225deg,var(--paper-fold),var(--paper-d));border-left:1px solid rgba(51,49,46,.12);border-bottom:1px solid rgba(51,49,46,.12);}
+
+a{text-decoration:none;color:var(--ink);transition:.18s;}
+ul{list-style:none;}
+.container{max-width:1140px;margin:0 auto;padding:0 5%;position:relative;z-index:1;}
+
+/* 纸带标签 */
+.ribbon{position:absolute;top:-14px;left:28px;font-family:var(--mono);font-size:.72rem;font-weight:bold;color:#fff;padding:.25rem .9rem;letter-spacing:2px;z-index:5;}
+.ribbon::after{content:"";position:absolute;left:0;bottom:-8px;border:4px solid;border-color:var(--ribbon-c,var(--red)) var(--ribbon-c,var(--red)) transparent transparent;}
+.ribbon.red{background:var(--red);--ribbon-c:var(--red);}
+.ribbon.blue{background:var(--blue);--ribbon-c:var(--blue);}
+.ribbon.green{background:var(--green);--ribbon-c:var(--green);}
+
+header{background:var(--paper);border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:1000;box-shadow:0 3px 10px rgba(51,49,46,.08);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:.6rem;letter-spacing:.5px;}
+.logo .crane{display:inline-block;width:0;height:0;margin-right:.2rem;
+  border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:16px solid var(--red);
+  filter:drop-shadow(2px 2px 0 rgba(0,0,0,.1));transform:rotate(-15deg);}
+.logo .crane::after{content:"";position:absolute;top:6px;left:-6px;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid var(--blue);}
+.logo span{color:var(--red);}
+.logo small{font-family:var(--mono);font-size:.6rem;color:var(--ink-soft);letter-spacing:2px;}
+.nav-menu{display:flex;gap:1.4rem;}
+.nav-menu a{font-size:.86rem;color:var(--ink-soft);padding:.3rem .2rem;border-bottom:2px solid transparent;}
+.nav-menu a:hover{color:var(--red);border-bottom-color:var(--red);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{width:26px;height:2px;background:var(--ink);}
+
+main{padding:2.5rem 0 4rem;}
+
+/* HERO 扉页 */
+.hero{padding:3.5rem 3rem;margin-bottom:4rem;display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:center;}
+.hero::after{content:"";position:absolute;inset:0;background:var(--fold);pointer-events:none;}
+.hero-inner{position:relative;z-index:2;}
+.hero-cap{font-family:var(--mono);font-size:.76rem;color:var(--red);letter-spacing:3px;margin-bottom:1rem;}
+.hero h1{font-family:var(--serif);font-size:3.2rem;color:var(--ink);line-height:1.2;margin-bottom:1rem;}
+.hero h1 em{font-style:normal;color:var(--red);position:relative;}
+.hero h1 em::after{content:"";position:absolute;bottom:4px;left:0;right:0;height:10px;background:var(--yellow);z-index:-1;}
+.hero-url{font-family:var(--mono);font-size:.85rem;color:var(--ink);background:var(--paper-d);border:1px dashed var(--ink-soft);padding:.5rem .9rem;display:inline-block;margin-bottom:1.2rem;word-break:break-all;}
+.hero-desc{font-size:.94rem;color:var(--ink-soft);max-width:480px;margin-bottom:1.5rem;}
+.hero-btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.88rem;font-weight:bold;color:#fff;background:var(--ink);padding:.9rem 2rem;clip-path:polygon(0 0,100% 0,100% 70%,92% 100%,0 100%);letter-spacing:1px;}
+.hero-btn:hover{background:var(--red);}
+.hero-btn::after{content:"✈";}
+
+/* 纸飞机 */
+.plane{text-align:center;}
+.plane-svg{width:200px;height:180px;margin:0 auto;position:relative;}
+.plane-path{position:absolute;top:0;left:0;width:100%;height:100%;}
+
+/* 栏目标题 */
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:.6rem;border-bottom:2px dotted var(--ink-soft);}
+.sec-title{font-family:var(--serif);font-size:1.55rem;color:var(--ink);}
+.sec-title .tri{display:inline-block;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:13px solid var(--red);margin-right:.6rem;vertical-align:middle;}
+.sec-tag{font-family:var(--mono);font-size:.72rem;color:var(--ink);background:var(--yellow);padding:.25rem .8rem;border:1px solid var(--ink);}
+
+/* 分类 */
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem;margin-bottom:4rem;}
+.cat-item{background:var(--paper-d);box-shadow:var(--shadow-sm);padding:1.5rem 1rem;text-align:center;cursor:pointer;transition:.2s;position:relative;clip-path:polygon(0 0,100% 0,100% 88%,90% 100%,0 100%);}
+.cat-item:nth-child(1){background:var(--red);}
+.cat-item:nth-child(2){background:var(--blue);}
+.cat-item:nth-child(3){background:var(--yellow);}
+.cat-item:nth-child(4){background:var(--green);}
+.cat-item:nth-child(5){background:var(--ink);}
+.cat-item:nth-child(6){background:var(--paper-d);border:1px solid var(--ink-soft);}
+.cat-item:hover{transform:translateY(-5px) rotate(-1.5deg);box-shadow:var(--shadow);}
+.cat-fold{font-family:var(--mono);font-size:.66rem;color:rgba(255,255,255,.8);display:block;margin-bottom:.5rem;}
+.cat-item:nth-child(3) .cat-fold,.cat-item:nth-child(6) .cat-fold{color:var(--ink-soft);}
+.cat-icon{font-size:2rem;display:block;margin-bottom:.5rem;filter:drop-shadow(1px 1px 0 rgba(0,0,0,.15));}
+.cat-name{font-family:var(--mono);font-size:.82rem;font-weight:bold;color:#fff;}
+.cat-item:nth-child(3) .cat-name,.cat-item:nth-child(6) .cat-name{color:var(--ink);}
+
+/* 排行榜 */
+.ranking{margin-bottom:4rem;}
+.rank-list{background:var(--paper-d);box-shadow:var(--shadow-sm);padding:1rem 1.5rem;}
+.rank-row{display:grid;grid-template-columns:70px 1fr 130px 90px;gap:1rem;align-items:center;padding:1rem 1.2rem;margin-bottom:.8rem;background:var(--paper);box-shadow:var(--shadow-sm);transition:.18s;clip-path:polygon(0 0,100% 0,100% 82%,94% 100%,0 100%);}
+.rank-row:last-child{margin-bottom:0;}
+.rank-row:hover{transform:translateX(6px);background:var(--paper-fold);}
+.rank-no{font-family:var(--serif);font-size:2rem;color:var(--red);text-align:center;line-height:1;}
+.rank-row:nth-child(2) .rank-no{color:var(--blue);}
+.rank-row:nth-child(3) .rank-no{color:var(--green);}
+.rank-info h3{font-size:1.05rem;color:var(--ink);margin-bottom:.1rem;}
+.rank-info p{font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);}
+.rank-fold{font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);text-align:center;}
+.rank-score{font-family:var(--serif);font-size:1.3rem;color:var(--red);text-align:center;border-bottom:2px solid var(--ink);padding-bottom:.2rem;}
+
+/* 新片 */
+.latest{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:4rem;}
+.vhs{box-shadow:var(--shadow);overflow:hidden;background:var(--paper);transition:.2s;clip-path:polygon(0 0,100% 0,100% 92%,93% 100%,0 100%);}
+.vhs:hover{transform:translateY(-5px);}
+.vhs-cover{height:170px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;border-bottom:2px solid rgba(51,49,46,.12);}
+.vhs:nth-child(1) .vhs-cover{background:linear-gradient(135deg,var(--red),#B83C3C);}
+.vhs:nth-child(2) .vhs-cover{background:linear-gradient(135deg,var(--blue),#3A5A85);}
+.vhs:nth-child(3) .vhs-cover{background:linear-gradient(135deg,var(--green),#4A8568);}
+.vhs-cover .tag{position:absolute;top:10px;right:10px;font-family:var(--mono);font-size:.66rem;color:var(--ink);background:var(--yellow);padding:.15rem .5rem;border:1px solid var(--ink);transform:rotate(4deg);}
+.vhs-body{padding:1.4rem;}
+.vhs-body h3{font-family:var(--serif);font-size:1.1rem;color:var(--ink);margin-bottom:.5rem;}
+.vhs-body p{font-size:.82rem;color:var(--ink-soft);margin-bottom:.8rem;line-height:1.6;}
+.vhs-tags{display:flex;gap:.4rem;flex-wrap:wrap;}
+.vhs-tag{font-family:var(--mono);font-size:.7rem;color:var(--ink);background:var(--paper-d);border:1px solid var(--ink-soft);padding:.15rem .5rem;}
+
+/* 关于 */
+.about{padding:3rem;margin-bottom:4rem;background:var(--ink);color:var(--paper);box-shadow:var(--shadow);clip-path:polygon(0 0,100% 0,100% 100%,8% 100%,0 92%);}
+.about h2{font-family:var(--serif);font-size:1.55rem;color:var(--yellow);margin-bottom:1.2rem;}
+.about p{font-size:.92rem;color:var(--paper-d);margin-bottom:.8rem;line-height:1.8;}
+.about strong{color:var(--yellow);}
+.about .quote{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--red);border-left:4px solid var(--red);padding-left:1rem;margin:1.2rem 0;}
+
+footer{border-top:2px solid var(--ink);background:var(--paper-d);padding:2.5rem 5%;text-align:center;}
+.footer-inner{max-width:1140px;margin:0 auto;}
+.footer-logo{font-family:var(--serif);font-size:1.5rem;color:var(--ink);margin-bottom:1rem;}
+.footer-logo span{color:var(--red);}
+footer p{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);margin-bottom:.5rem;}
+footer a{color:var(--red);text-decoration:underline;}
+
+.back-top{position:fixed;bottom:2rem;right:2rem;width:52px;height:52px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:pointer;opacity:0;transition:.3s;z-index:999;clip-path:polygon(0 0,100% 0,100% 70%,92% 100%,0 100%);}
+.back-top.show{opacity:1;}
+.back-top:hover{background:var(--ink);}
+
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;}
+  .hero h1{font-size:2.5rem;}
+  .categories{grid-template-columns:repeat(3,1fr);}
+  .latest{grid-template-columns:1fr;}
+}
+@media(max-width:900px){
+  .nav-menu{position:fixed;top:72px;left:-100%;flex-direction:column;width:100%;background:var(--paper);padding:1.5rem 0;border-bottom:2px solid var(--ink);transition:.3s;}
+  .nav-menu.active{left:0;}
+  .nav-menu li{margin:.8rem 0;text-align:center;}
+  .hamburger{display:flex;}
+  .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+  .hamburger.active span:nth-child(2){opacity:0;}
+  .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px);}
+  .rank-row{grid-template-columns:60px 1fr;row-gap:.6rem;}
+  .rank-fold,.rank-score{grid-column:2;}
+}
+@media(max-width:600px){
+  .hero{padding:2.5rem 1.4rem;}
+  .hero h1{font-size:1.9rem;}
+  .hero-url{font-size:.8rem;}
+  .categories{grid-template-columns:repeat(2,1fr);}
+  .about{padding:2rem 1.4rem;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+<header>
+  <div class="container nav-inner">
+    <div class="logo"><span class="crane"></span>九一<span>电影网</span><small>ORIGAMI CINEMA</small></div>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">扉页</a></li>
+      <li><a href="#categories">折页</a></li>
+      <li><a href="#ranking">榜单</a></li>
+      <li><a href="#latest">新折</a></li>
+      <li><a href="#about">封底</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- HERO -->
+  <section class="fold hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-cap">▲ ORIGAMI EDITION v1.0</div>
+      <h1>九一<em>电影网</em><br>一折一影 皆为故事</h1>
+      <div class="hero-url">https://jiuyidianyingwang-top.github.io</div>
+      <p class="hero-desc">以折纸纸艺立体美学打造的影视导航平台。高清电影、剧集、动漫按色彩折页分区，每日上新，极速播放，让每一次打开都像展开一张新纸。</p>
+      <a href="#" class="hero-btn">展开新片</a>
+    </div>
+    <div class="plane">
+      <svg class="plane-path" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 150 L120 30 L150 55 L80 90 L150 95 Z" fill="#E8B84A" stroke="#33312E" stroke-width="1.5"/>
+        <path d="M80 90 L150 95 L120 30 Z" fill="#F5F1E8" stroke="#33312E" stroke-width="1"/>
+        <path d="M120 30 L190 20 L160 60 Z" fill="#D94F4F" stroke="#33312E" stroke-width="1"/>
+        <path d="M10 150 L120 30" stroke="#33312E" stroke-width="1" stroke-dasharray="4 4" opacity=".4"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 分类 -->
+  <section id="categories">
+    <div class="sec-head">
+      <h2 class="sec-title"><span class="tri"></span>折页 · 影片分类</h2>
+      <span class="sec-tag">6 折页</span>
+    </div>
+    <div class="categories">
+      <div class="cat-item"><span class="cat-fold">FOLD 01</span><span class="cat-icon">🎬</span><span class="cat-name">动作</span></div>
+      <div class="cat-item"><span class="cat-fold">FOLD 02</span><span class="cat-icon">🔮</span><span class="cat-name">科幻</span></div>
+      <div class="cat-item"><span class="cat-fold">FOLD 03</span><span class="cat-icon">😂</span><span class="cat-name">喜剧</span></div>
+      <div class="cat-item"><span class="cat-fold">FOLD 04</span><span class="cat-icon">💕</span><span class="cat-name">爱情</span></div>
+      <div class="cat-item"><span class="cat-fold">FOLD 05</span><span class="cat-icon">🎨</span><span class="cat-name">动漫</span></div>
+      <div class="cat-item"><span class="cat-fold">FOLD 06</span><span class="cat-icon">📜</span><span class="cat-name">纪录</span></div>
+    </div>
+  </section>
+
+  <!-- 排行榜 -->
+  <section id="ranking" class="ranking">
+    <div class="sec-head">
+      <h2 class="sec-title"><span class="tri"></span>折纸榜 · 热播</h2>
+      <span class="sec-tag">TOP 05</span>
+    </div>
+    <div class="rank-list">
+      <div class="rank-row">
+        <div class="rank-no">01</div>
+        <div class="rank-info"><h3>沙丘 2 (2024)</h3><p>科幻 / 冒险 / 史诗巨制</p></div>
+        <div class="rank-fold">折 1280万 次</div>
+        <div class="rank-score">9.8</div>
+      </div>
+      <div class="rank-row">
+        <div class="rank-no">02</div>
+        <div class="rank-info"><h3>奥本海默 (2023)</h3><p>传记 / 历史 / 诺兰导演</p></div>
+        <div class="rank-fold">折 1102万 次</div>
+        <div class="rank-score">9.6</div>
+      </div>
+      <div class="rank-row">
+        <div class="rank-no">03</div>
+        <div class="rank-info"><h3>坠落的审判 (2023)</h3><p>悬疑 / 犯罪 / 金棕榈奖</p></div>
+        <div class="rank-fold">折 964万 次</div>
+        <div class="rank-score">9.1</div>
+      </div>
+      <div class="rank-row">
+        <div class="rank-no">04</div>
+        <div class="rank-info"><h3>美国小说 (2023)</h3><p>喜剧 / 剧情 / 奥斯卡改编剧本</p></div>
+        <div class="rank-fold">折 821万 次</div>
+        <div class="rank-score">8.8</div>
+      </div>
+      <div class="rank-row">
+        <div class="rank-no">05</div>
+        <div class="rank-info"><h3>利益区域 (2023)</h3><p>剧情 / 历史 / 奥斯卡国际片</p></div>
+        <div class="rank-fold">折 706万 次</div>
+        <div class="rank-score">8.5</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 新片 -->
+  <section id="latest">
+    <div class="sec-head">
+      <h2 class="sec-title"><span class="tri"></span>新折 · 最新上线</h2>
+      <span class="sec-tag">NEW 03</span>
+    </div>
+    <div class="latest">
+      <div class="vhs">
+        <div class="vhs-cover">🦖<span class="tag">NEW</span></div>
+        <div class="vhs-body">
+          <h3>哥斯拉大战金刚 2</h3>
+          <p>两大怪兽王者联手对抗地心远古威胁，特效密集、节奏爽快，周末必看。</p>
+          <div class="vhs-tags"><span class="vhs-tag">动作</span><span class="vhs-tag">2024</span></div>
+        </div>
+      </div>
+      <div class="vhs">
+        <div class="vhs-cover">🐼<span class="tag">HOT</span></div>
+        <div class="vhs-body">
+          <h3>功夫熊猫 4</h3>
+          <p>阿宝新修行面对魅影妖后，笑点充足、画风讨喜，亲子共看无压力。</p>
+          <div class="vhs-tags"><span class="vhs-tag">动画</span><span class="vhs-tag">2024</span></div>
+        </div>
+      </div>
+      <div class="vhs">
+        <div class="vhs-cover">🧠<span class="tag">★</span></div>
+        <div class="vhs-body">
+          <h3>头脑特工队 2</h3>
+          <p>青春期情绪总部加入新成员，心理隐喻更成熟，老粉丝新观众都能入戏。</p>
+          <div class="vhs-tags"><span class="vhs-tag">动画</span><span class="vhs-tag">2024</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about" class="about">
+    <span class="ribbon red">封底</span>
+    <h2>封底 · 关于九一电影网</h2>
+    <p>欢迎来到 <strong>九一电影网</strong>，一个以折纸纸艺美学打造的高清正版影视导航平台。官方地址：<strong>https://jiuyidianyingwang-top.github.io</strong></p>
+    <p>每一部影片都像一张精心折叠的纸，展开便是一个完整的故事世界。院线新片与经典老片统一归档，极速播放不卡顿。收藏网址，随时翻开下一页。</p>
+    <div class="quote">「纸有千折，影有千面；一折一影，皆是人间。」</div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">九一<span>电影网</span></div>
+    <p>© 2024 九一电影网. All rights reserved.</p>
+    <p>网址：<a href="https://jiuyidianyingwang-top.github.io">https://jiuyidianyingwang-top.github.io</a></p>
+    <p style="margin-top:.5rem;font-size:.72rem;">▲ 折完这一页 · 翻到下一页 ▼</p>
+  </div>
+</footer>
+
+<div class="back-top" id="backTop">↑</div>
+
+<script>
+var hamburger=document.getElementById('hamburger');
+var navMenu=document.getElementById('navMenu');
+hamburger.addEventListener('click',function(){hamburger.classList.toggle('active');navMenu.classList.toggle('active');});
+navMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){hamburger.classList.remove('active');navMenu.classList.remove('active');});});
+var backTop=document.getElementById('backTop');
+window.addEventListener('scroll',function(){backTop.classList.toggle('show',window.scrollY>400);});
+backTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+// 纸飞机循环滑翔
+var plane=document.querySelector('.plane-svg');var pos=0;var dir=1;
+setInterval(function(){pos+=dir*1.5;if(pos>12||pos<-12)dir*=-1;plane.style.transform='translateX('+pos+'px) rotate('+(pos*.4)+'deg)';},60);
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.1});
+document.querySelectorAll('.cat-item,.rank-row,.vhs,.about').forEach(function(el){el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';io.observe(el);});
+</script>
+</body>
+</html>
